@@ -1,37 +1,71 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>DTT</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DTT - COMP 2154</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- New top header  -->
+    <header class="top-header">
+      <h2>COMP 2154 - Winter 2026</h2>
+    </header>
 
-<h1>Daily Task Tracker</h1>
+    <!-- New wrapper: centered -->
+    <main class="page-wrapper">
+      <section class="container">
+        <h1>Daily Task Tracker</h1>
 
-<input id="title" placeholder="Task title">
-<input id="desc" placeholder="Description">
-<input id="date" type="date">
+        <!-- New task bar -->
+        <div class="task-create-bar">
+          <input id="title" placeholder="Task title" />
+          <input id="desc" placeholder="Description" />
+          <input id="date" type="date" />
 
-<select id="status">
-  <option>To Do</option>
-  <option>Doing</option>
-  <option>Done</option>
-</select>
+          <select id="status">
+            <option>To Do</option>
+            <option>Doing</option>
+            <option>Done</option>
+          </select>
 
-<button onclick="addTask()">Add Task</button>
+          <button onclick="addTask()">Add Task</button>
+        </div>
 
-<br><br>
+        <!-- New filter area -->
+        <div class="list-toolbar">
+          <span class="toolbar-label">Task Filters</span>
 
-<select onchange="filterTasks(this.value)">
-  <option value="All">All</option>
-  <option value="To Do">To Do</option>
-  <option value="Doing">Doing</option>
-  <option value="Done">Done</option>
-</select>
+          <div class="toolbar-controls">
+            <select id="filter" onchange="applyFiltersAndSorting()">
+              <option value="All">All Status</option>
+              <option value="To Do">To Do</option>
+              <option value="Doing">Doing</option>
+              <option value="Done">Done</option>
+            </select>
 
-<ul id="list"></ul>
+            <select id="sort" onchange="applyFiltersAndSorting()">
+              <option value="dueDateAsc">Due Date (Oldest First)</option>
+              <option value="dueDateDesc">Due Date (Newest First)</option>
+              <option value="titleAsc">Title (A-Z)</option>
+              <option value="titleDesc">Title (Z-A)</option>
+            </select>
+          </div>
+        </div>
 
-<script src="script.js"></script>
+        <!-- List area highlighted for tests-->
+        <div class="task-list-box">
+          <h3>Task List</h3>
+          <ul id="list"></ul>
+        </div>
+      </section>
+    </main>
 
-</body>
+    <!--Team member names and IDs -->
+    <footer class="footer">
+      <p>Andre - 101512582 | Krishna Venu - 101484996</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>

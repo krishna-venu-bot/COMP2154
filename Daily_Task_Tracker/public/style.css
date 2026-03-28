@@ -1,8 +1,183 @@
 body {
-  font-family: Arial;
-  margin: 30px;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0b1f3a;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-li {
+.top-header {
+  text-align: center;
+  padding: 20px 10px 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.page-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  background-color: rgba(255, 255, 255, 0.06);
+  padding: 35px;
+  border-radius: 18px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+  text-align: center;
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+/* New top task creation bar inspired by travel/filter interfaces */
+.task-create-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 18px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+}
+
+/* New top filter bar placed above the task list */
+.list-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 16px 18px;
+  border-radius: 18px;
+  margin-bottom: 18px;
+}
+
+.toolbar-label {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.toolbar-controls {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.toolbar-controls select {
+  min-width: 220px;
+}
+
+input,
+select,
+button {
+  padding: 14px 18px;
+  font-size: 16px;
+  border-radius: 999px;
+  border: none;
+}
+
+input,
+select {
+  background-color: #e9eef2;
+  color: #1b1b1b;
+  min-width: 170px;
+}
+
+#title {
+  min-width: 220px;
+}
+
+#desc {
+  min-width: 240px;
+}
+
+button {
+  background-color: #1f7a8c;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  min-width: 150px;
+}
+
+button:hover {
+  background-color: #256c87;
+}
+
+.task-list-box {
+  background-color: #9ec5fe;
+  color: #0b1f3a;
+  padding: 20px;
+  border-radius: 16px;
+  text-align: left;
+}
+
+.task-list-box h3 {
+  margin-top: 0;
+  text-align: center;
+}
+
+#list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#list li {
+  background-color: rgba(255, 255, 255, 0.78);
   margin: 10px 0;
+  padding: 14px 16px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  color: #0b1f3a;
+  font-weight: bold;
+}
+
+.footer {
+  text-align: center;
+  padding: 15px 10px 20px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .task-create-bar,
+  .list-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  input,
+  select,
+  button,
+  #title,
+  #desc {
+    min-width: 100%;
+  }
+
+  .list-toolbar {
+    justify-content: center;
+  }
+
+  .toolbar-controls {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .toolbar-controls select {
+    min-width: 100%;
+  }
 }
